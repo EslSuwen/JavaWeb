@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
 
-@WebFilter(filterName = "LoginFilter", urlPatterns = "")
+@WebFilter(filterName = "LoginFilter", urlPatterns = "/*")
 public class LoginFilter implements Filter {
 
     /**
      * 需要排除的页面
      */
     private String excludedPages;
-    private String[] excludedPageArray = {"/index.jsp", "/login.jsp", "/login"};
+    private String[] excludedPageArray = {"/index.jsp", "/login.jsp", "/login","image","css"};
 
     public void destroy() {
     }
@@ -44,10 +44,10 @@ public class LoginFilter implements Filter {
         response.getWriter().print("  session.isLogin: " + loginFlag);
 
         boolean isExcludedPage = false;
-        response.getWriter().print("  current.url=" + request.getServletPath()+" current.user="+session.getAttribute("username"));
+        response.getWriter().print("  current.url=" + request.getServletPath() + " current.user=" + session.getAttribute("username"));
         for (
                 String page : excludedPageArray) {// 判断是否在过滤 url 之外
-            if (request.getServletPath().equals(page)) {
+            if (request.getServletPath().contains(page)) {
                 isExcludedPage = true;
                 break;
             }
