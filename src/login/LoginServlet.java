@@ -1,6 +1,6 @@
 package login;
 
-import database.JdbcOp;
+import util.JdbcOp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
