@@ -26,7 +26,7 @@
 </head>
 <body>
 <div align="center">
-    <form action="ShangServlet?method=search" method="post" onsubmit="return check()">
+    <form action="AccountServlet?method=search" method="post" onsubmit="return check()">
         <div class="a">
             消费名称<input type="text" id="name" name="name" />
         </div>

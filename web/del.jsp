@@ -43,7 +43,7 @@
             <td>${item.name}</td>
             <td>${item.money}</td>
             <td>${item.date}</td>
-            <td><a onclick="return check()" href="ShangServlet?method=del&id=${item.id}">删除</a></td>
+            <td><a onclick="return check()" href="AccountServlet?method=del&id=${item.id}">删除</a></td>
         </tr>
         <%i++; %>
     </c:forEach>

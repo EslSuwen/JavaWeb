@@ -27,7 +27,7 @@
 </script>
 <%} %>
 <div align="center">
-    <form action="ShangServlet?method=add" method="post" onsubmit="return check()">
+    <form action="AccountServlet?method=add" method="post" onsubmit="return check()">
         <div class="a">消费名称:<input type="text" name="name" id="name"></div>
         <div class="a">消费金额:<input type="text" name="money" id="money"></div>
         <div class="a">消费日期:<input type="text" name="date" id="date"></div>

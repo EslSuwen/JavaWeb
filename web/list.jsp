@@ -43,7 +43,7 @@
             <td>${item.name}</td>
             <td>${item.money}</td>
             <td>${item.date}</td>
-            <td><a href="ShangServlet?method=getcoursebyid&id=${item.id}">修改</a></td>
+            <td><a href="AccountServlet?method=getcoursebyid&id=${item.id}">修改</a></td>
         </tr>
         <%i++; %>
     </c:forEach>

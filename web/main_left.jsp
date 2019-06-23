@@ -23,13 +23,13 @@
     <div class="a">
         <a href="add.jsp" target="main_right">新增消费账单</a></div>
     <div class="a">
-        <a href="ShangServlet?method=delete" target="main_right">删除消费账单</a></div>
+        <a href="AccountServlet?method=delete" target="main_right">删除消费账单</a></div>
     <div class="a">
-        <a href="ShangServlet?method=list" target="main_right">修改消费账单</a></div>
+        <a href="AccountServlet?method=list" target="main_right">修改消费账单</a></div>
     <div class="a">
         <a href="search.jsp" target="main_right">查询消费账单</a></div>
     <div class="a">
-        <a href="ShangServlet?method=show" target="main_right">查看所有账单</a></div>
+        <a href="AccountServlet?method=show" target="main_right">查看所有账单</a></div>
 </div>
 </body>
 </html>

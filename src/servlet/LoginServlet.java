@@ -1,6 +1,6 @@
-package login;
+package servlet;
 
-import util.JdbcOp;
+import op.JdbcOp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                     System.out.println("username: " + nm + " password: " + pd);
 
                     if (nm.equals(username)) {
-                        out.print("<script language='javascript'>alert('该账户已存在！请重新注册！');window.location.href='test.jsp';</script>");
+                        out.print("<script language='javascript'>alert('该账户已存在！请重新注册！');window.location.href='login.jsp';</script>");
                         out.flush();
                         out.close();
                     }
@@ -60,11 +60,11 @@ public class LoginServlet extends HttpServlet {
                 int i = jdbc.executeUpdate("insert into users values('" + username + "','" + password + "')");
                 System.out.println(i);
                 if (i == 0) {
-                    out.print("<script language='javascript'>alert('账户创建失败！请重新注册！');window.location.href='index.jsp';</script>");
+                    out.print("<script language='javascript'>alert('账户创建失败！请重新注册！');window.location.href='login.jsp';</script>");
                     out.flush();
                     out.close();
                 } else {
-                    out.print("<script language='javascript'>alert('该账号已成功注册！请牢记密码！');window.location.href='test.jsp';</script>");
+                    out.print("<script language='javascript'>alert('该账号已成功注册！请牢记密码！');window.location.href='main.jsp';</script>");
                     out.flush();
                     out.close();
                 }
@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
                         session.setAttribute("isLogin", "true");
                         session.setAttribute("username", username);
 
-                        out.print("<script language='javascript'>alert('You login successful  ! 你已成功登录！out.print');window.location.href='test.jsp';</script>");
+                        out.print("<script language='javascript'>alert('You login successful  ! 你已成功登录！out.print');window.location.href='main.jsp';</script>");
                         out.flush();
                         out.close();
                     }
@@ -101,7 +101,7 @@ public class LoginServlet extends HttpServlet {
                 e.printStackTrace();
             }
             pw.write("login fail");
-            out.print("<script language='javascript'>alert('please login first 登陆信息输入有误！');window.location.href='index.jsp';</script>");
+            out.print("<script language='javascript'>alert('please login first 登陆信息输入有误！');window.location.href='login.jsp';</script>");
             out.flush();
             out.close();
         }

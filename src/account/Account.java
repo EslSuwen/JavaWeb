@@ -1,6 +1,6 @@
-package student;
+package account;
 
-public class Student {
+public class Account {
     private int id;
     private String name;
     private String money;
@@ -30,13 +30,13 @@ public class Student {
         this.name = name;
     }
 
-    public Student() {}
-    public Student(String name,String money, String date) {
+    public Account() {}
+    public Account(String name, String money, String date) {
         this.name = name;
         this.money=money;
         this.date=date;
     }
-    public Student(int id,String name,String money, String date) {
+    public Account(int id, String name, String money, String date) {
         this.id=id;
         this.name = name;
         this.money=money;

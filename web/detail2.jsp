@@ -34,7 +34,7 @@
     alert("<%=request.getAttribute("message")%>");
 </script>
 <%} %>
-<form action="ShangServlet?method=update" method="post" onsubmit="return check()">
+<form action="AccountServlet?method=update" method="post" onsubmit="return check()">
     <div class="a">
         消费名称:<input type="text" id="name" name="name" value="${stu.name}"/>
     </div>
