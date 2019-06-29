@@ -35,15 +35,15 @@ public class LoginFilter implements Filter {
         if (session.isNew()) {
             //将数据存储到session中
             session.setAttribute("isLogin", "false");
-            response.getWriter().print("session generate successfully, the ID of session: " + sessionId);
+//            response.getWriter().print("session generate successfully, the ID of session: " + sessionId);
         } else {
-            response.getWriter().print("sever has existed the session, the ID of session: " + sessionId);
+//            response.getWriter().print("sever has existed the session, the ID of session: " + sessionId);
         }
         Object loginFlag = session.getAttribute("isLogin");     //("isLogin");
-        response.getWriter().print("  session.isLogin: " + loginFlag);
+//        response.getWriter().print("  session.isLogin: " + loginFlag);
 
         boolean isExcludedPage = false;
-        response.getWriter().print("  current.url=" + request.getServletPath() + " current.user=" + session.getAttribute("username"));
+//        response.getWriter().print("  current.url=" + request.getServletPath() + " current.user=" + session.getAttribute("username"));
         for (
                 String page : excludedPageArray) {// 判断是否在过滤 url 之外
             if (request.getServletPath().contains(page)) {
@@ -58,7 +58,7 @@ public class LoginFilter implements Filter {
             if (loginFlag == "false") {
                 //没有登录
                 PrintWriter out = response.getWriter();
-                out.print("<script language='javascript'>alert('Please login first! 请先登录！out.print');window.location.href='index.jsp';</script>");
+                out.print("<script language='javascript'>alert('Please login first! 请先登录！');window.location.href='index.jsp';</script>");
                 out.flush();
                 out.close();
             }
